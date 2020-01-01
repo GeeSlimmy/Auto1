@@ -10,7 +10,7 @@ jobs:
 
 - job: 'Test'
   pool:
-    vmImage: 'vs2017-win2016'
+    vmImage: 'Agent_RF_1' #'vs2017-win2016'
   strategy:
     matrix:
       Python37:
@@ -31,6 +31,6 @@ jobs:
   - task: PublishTestResults@2
     inputs:
       testResultsFiles: outputxunit.xml
-      searchFolder: 'D:\a\1\s\'
+      searchFolder: #'D:\a\1\s\'
       condition: succeededOrFailed()
       displayName: 'Publish Test Results outputxunit.xml'
